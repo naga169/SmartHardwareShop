@@ -50,6 +50,11 @@ function Cart() {
     const onProductClick = () => {
         dispatch({ type: 'SHOW_HIDE_MODAL', payload: true })
     }
+    
+    const checkOut = () => {
+        dispatch({ type: 'SET_CART_PRODUCTS', payload: [] })
+        setShowToaster(true);
+    }
 
     const continueShopping = () => {
         dispatch({ type: 'SET_CART_PRODUCTS', payload: [] })
@@ -109,14 +114,13 @@ function Cart() {
                                         <div className="summary-item"><span className="text">Discount</span><span className="price">kr {discount}</span></div>
                                         <div className="summary-item"><span className="text">Shipping</span><span className="price">kr {shipping}</span></div>
                                         <div className="summary-item"><span className="text">Total</span><span className="price">kr {(subTotal - discount + shipping).toFixed(2)} </span></div>
-                                        <button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => { setShowToaster(true) }}>Checkout</button>
+                                       <button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => checkOut()}>Checkout</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <ProductView page="cart"></ProductView>
-
                 </section>
             ) :
                 <div className="emptyCart">
