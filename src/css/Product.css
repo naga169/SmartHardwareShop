@@ -1,0 +1,29 @@
+.productImage {
+    height: 168px;
+    width: 168px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.25);
+    @media (max-width: 768px) {
+        width: auto;
+    }
+}
+
+.card {
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    padding: 5px;
+}
+
+.discount {
+    text-decoration: line-through;
+    font-size: 15px;
+}
+
+.save {
+    font-size: 12px;
+}
+
+.cost {
+    color: #B12704;
+    font-size: 16px;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}

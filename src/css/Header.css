@@ -1,0 +1,27 @@
+
+.header {
+    flex : 1;
+    height : 20%;
+}
+
+.cartNumber {
+    border: 1px solid;
+    width: 25px;
+    height: fit-content;
+    border-radius: 30px;
+    font-size: 12px;
+    background: #0dcaf0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -10px;
+}
+
+.heading{
+    font-size: 25px;
+}
+
+.headerProducts{
+    margin-top: 5px;
+}
