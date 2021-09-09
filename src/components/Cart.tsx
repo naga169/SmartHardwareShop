@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,6 +7,7 @@ import deleteProduct from '../icons/delete.svg';
 import { Product as ProductType } from '../types/types';
 import Header from './Header';
 import MessageLayout from './MessageLayout';
+
 function Cart() {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -29,7 +29,6 @@ function Cart() {
             return pro;
         });
         dispatch({ type: 'SET_CART_PRODUCTS', payload: [...newProducts] })
-
         const updatedTotal = parseInt(subTotal) - (item.price * itemQuantity) + (item.price * parseInt(value))
         const updatedDiscount = parseInt(discount) - (item.discount * itemQuantity) + (item.discount * parseInt(value))
         setSubTotal(updatedTotal);
@@ -39,7 +38,6 @@ function Cart() {
     const onDeleteProduct = (item: any) => {
         const unDeletedProducts = cartProducts.filter(pro => pro.id !== item.id);
         dispatch({ type: 'SET_CART_PRODUCTS', payload: [...unDeletedProducts] })
-
         const itemQuantity = item.quantity ? item.quantity : 1;
         const updatedTotal = unDeletedProducts.length ? parseInt(subTotal) - (item.price * itemQuantity) : 0;
         const updatedDiscount = unDeletedProducts.length ? parseInt(discount) - (item.discount * itemQuantity) : 0;
@@ -60,7 +58,7 @@ function Cart() {
         dispatch({ type: 'SET_CART_PRODUCTS', payload: [] })
         history.push("/");
     }
-
+    
     return (
         <div>
             <Header onSearchChange={() => { }}></Header>
@@ -127,11 +125,9 @@ function Cart() {
                     <h2>No Products in cart</h2>
                     <button type="button" className="btn btn-primary btn-lg btn-block" onClick={() => { continueShopping() }}>Continue Shopping</button>
                 </div>
-
                 :
                 <MessageLayout />}
         </div>
-
     )
 }
 
