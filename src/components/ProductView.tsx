@@ -82,8 +82,9 @@ function ProductView({ page }: any) {
             <Modal show={toggleModal} size="lg"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered>
-                <Modal.Header closeButton onClick={() => onClose()}>
-                    <Modal.Title>Product Detail</Modal.Title>
+                <Modal.Header>
+                <Modal.Title>Product Detail</Modal.Title>
+                <button type="button" className="btn-close" onClick={() => onClose()}  aria-label="Close"></button>           
                 </Modal.Header>
                 <Modal.Body>
                     {ProductModal(page)}
