@@ -1,6 +1,11 @@
 # SmartHardwareShop
 SmartHardwareShop
 
+**Prerequisites to running the API:**
+- Node.js
+- Git
+- Yarn (optional)
+
 **How to run**
 
 ```
